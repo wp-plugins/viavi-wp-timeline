@@ -17,18 +17,23 @@ It includes different styles and features which helps the users to create differ
 The user interface, design functionality are very attractive features of this Timeline Plugin
  
 = Features =
-	* Simple & Modern Design
-  * Vertical Timeline Flow
-	* Five Style Themes
-	* Fully Responsive
-	* Easy to Customize
+* Simple & Modern Design
+* Vertical Timeline Flow
+* Five Style Themes
+* Fully Responsive
+* Easy to Customize
+
+= Author =
+Developed by [viaviweb.com](http://viaviweb.com)	
 
 == Installation ==
  
- 1. Send the file "Viavi-WordPress-Timeline" inside .zip into "/wp-content/plugins"
+ 1. Send the file "viavi-wp-timeline" inside .zip into "/wp-content/plugins"
  1. Go to Admin Panel > Plugins menu to activate plugin.
   
 == Changelog ==
+= 1.0.0 =
+Initial version released
  
 == Frequently Asked Questions ==
  
