@@ -1,0 +1,99 @@
+/* 
+    Document   : WordPress_Timeline_Admin_Css
+    Created on : 17.Ağu.2013, 19:32:43
+    Author     : ahmet
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+root { 
+    display: block;
+}
+
+.header-tabs{
+	margin:10px 0px;
+	}
+.header-tabs a{
+	border:none!important;
+	padding:8px 15px!important;
+	height:auto!important;
+	line-height:inherit!important;
+	box-shadow:none!important;		
+	background:#2b2f32!important;
+	color:#fff!important;	
+	}	
+
+.header-tabs a.active,.header-tabs a:hover{
+	background:#2bb24c!important;
+	border:none!important;
+	box-shadow:none!important;	
+	
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	
+	
+	margin-bottom:-6px!important;	
+	}
+
+
+.miniLangEn {color:#C00;font-size: 10px !important;font-weight: normal;}
+
+.WordPresswptablestd {border-spacing: 0;border-collapse: collapse; border-left:solid 1px #eee; border-right:solid 1px #eee; margin-bottom:1%;}
+.WordPresswptablestd td{border-bottom: 1px solid #eee; padding:1%;}
+.WordPresswptablestd th{ text-align:left; background:#eee; padding:1%;}
+
+i.mce-i-WordPress-timeline-mce-icon {
+    background-image: url('../images/Viavi-WordPress-Timeline-button.png');
+}
+.viavi-content{
+	background:#fff;
+	padding:0 1% 1% 1%;
+	border:solid 1px #e6e6e6;
+	width:96%;
+	min-height:400px;
+	
+	}
+.viavi-content h3{
+	font-weight:normal;
+	font-size:14px;
+	margin-bottom:1%!important;
+	}
+.viavi-content h2{
+	border-bottom:solid 1px #eee;
+	padding-bottom:1%;
+	}
+.viavi-content .ui-datepicker-trigger{
+	float:left;
+	margin:7px;
+	}
+.viavi-content input.hasDatepicker{
+	display:none;
+	}
+.viavi-content input[type="submit"].button{
+	background:#2b2f32;
+	color:#eee;
+	border:solid 1px #151719;
+	
+	box-shadow: 0 1px 0 #494f54 inset, 0 1px 0 rgba(0, 0, 0, 0.08);
+	}
+.viavi-content input[type="submit"].button:hover{
+	background:#2bb24c;
+	border:solid 1px #5acb2e;
+	
+	box-shadow: 0 1px 0 #6ae539 inset, 0 1px 0 rgba(0, 0, 0, 0.08);	
+	}
+/* Messages */
+.WordPress_ok{
+	background:#bfe670;
+	border:solid 1px #acd260;
+	padding:1%;
+	width:96%;
+	
+	/* Shadow */
+	-webkit-box-shadow: 0 8px 6px -6px #e1e1e1;
+	   -moz-box-shadow: 0 8px 6px -6px #e1e1e1;
+	        box-shadow: 0 8px 6px -6px #e1e1e1;		
+	}
+.footer{ background:#2B2F32; border:solid 1px #eee; width:96%; padding:1%; color:#fff;}
+.footer a{ color:#fff; text-decoration:none;}

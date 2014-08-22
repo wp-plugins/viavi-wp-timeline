@@ -1,0 +1,238 @@
+/* ============ Design 4 TIMELINE ============= */
+
+div#timelineContainer {
+	margin:20px auto;
+	overflow:hidden;
+	position:relative;
+	width:98%;
+	background:url(../images/timeline-line-bg.gif) center repeat-y;
+}
+
+div.timelineToggle {
+	float:right;
+	margin-right:0;
+	white-space:nowrap;
+}
+
+a.expandAll {
+	color:#ccc;
+	cursor:pointer;
+	background:#000;
+	-webkit-border-radius:4px;
+	-moz-border-radius:4px;
+	border-radius:4px;
+	font-size:12px;
+	padding:3px 5px;
+}
+
+	a.expandAll:hover {
+		color:#7DBADF;
+		cursor:pointer;
+	}
+
+div.timelineMajor {
+	float:left;
+	width:50%;
+	/*border-left:2px solid #2b2f32;	
+	width:900px;*/
+}
+
+	.timelineMajor h2 {
+		/*background:url(../images/timeline_century_tick.gif) left center no-repeat;*/
+		cursor: pointer;
+		font-size:2em;
+		font-weight:400;
+		margin:0 0 0px!important;
+		height:80px;
+		margin-right:-43px!important;
+		width:100%;
+		
+	}
+
+	.timelineMajor h2 span {
+		border:solid 2px #2b2f32;
+		background:#fff;
+		color:#2b2f32;
+		line-height:1.7em;
+		float:right;
+		font-size:100%;
+		
+		padding:1% 5%;
+		text-align:center;
+		
+		-webkit-border-radius: 10px;
+		-moz-border-radius: 10px;
+		border-radius: 10px;
+		margin-right:-10px;		
+		
+	}
+	.timelineMajor h2 span:hover,h2.timelineMajorMarker span{
+		background:#2e83d8;
+		color:#fff;		
+		}
+	{}
+
+dl.timelineMinor {
+	clear:left;
+	float:left;
+	margin:0 12px 0 0!important;
+	padding:4px 4px 4px 0;
+	position:relative;
+	width:98%;
+	text-align:right;
+	/* width:880px; */
+}
+
+	.timelineMinor dt {
+		background:url(../images/timeline_decade_circle.gif) right center no-repeat;
+		clear:left;
+		font-size:1em;
+		list-style-type:none;
+		line-height:1em;		
+		margin:0 0 12px;
+		padding:0 24px 0 0;
+		margin-right:-15px;
+		white-space:nowrap;
+		text-align:right;		
+
+	}
+
+		.timelineMinor dt a {
+			color:#2b2f32;
+			cursor:pointer;
+			text-decoration:none;
+		}
+
+		.timelineMinor dt a.closed {
+			color:#2b2f32;
+			font-size:1em;
+			margin-left:0;
+		}
+
+		.timelineMinor dt a.open {
+			color:#2E83D8 !important;
+		}
+
+		.timelineMinor dt a:hover {
+			color:#2E83D8 !important;
+		}
+
+	.timelineMinor dd {
+		/*padding-left:24px;*/
+		width:98%;
+	}
+
+		.timelineMinor dd h3 {
+			color:#FFF;
+			clear:both;
+			float:left;
+			font-size:1.5em;
+			margin:0;
+			white-space:nowrap;
+		}
+
+.timelineEvent div.event_content {
+	clear:both;
+	overflow: hidden;
+	line-height:1.2em;
+	margin:0 0 10px 10px;
+        font-size: 0.8em;
+		padding:10px;	
+	/*-webkit-box-shadow: 0 8px 6px -6px #ccc;
+	   -moz-box-shadow: 0 8px 6px -6px #ccc;
+	        box-shadow: 0 8px 6px -6px #ccc;*/
+        
+        
+	/* width:500px; */
+}
+.WordPressDate{
+	/*border:solid 1px #eee;*/
+	width:100%;
+	padding:5px;
+	margin:5px 0;
+	}
+.timeline-content{
+	margin:5% 0;
+	line-height:1.5em;	
+	}
+.timeline-content img{
+	float:left;
+	width:100%;
+	margin-bottom:2%;
+	}
+.timelineEvent h4 {
+	clear:left;
+	float:left;
+	font-size:1.4em;
+	font-weight:400;
+	margin:10px 0 0;
+	padding:0 0 0 20px;
+}
+
+.timelineEvent blockquote {
+	border-left:2px solid #ccc;
+	clear:left;
+	float:left;
+	font-size:1.8em;
+	margin-left:0;
+	padding:0 30px;
+	/* width:400px; */
+}
+
+.timelineEvent blockquote .attribution{
+	font-size:0.7em;
+	text-align: right;
+}
+
+
+.timelineEvent div.media {
+	float:right;
+	padding:0 0 12px;
+	/*width:300px;*/
+}
+
+	.timelineEvent .media img {
+		border:2px solid #000;
+		margin:0;
+	}
+
+	.timelineEvent .media p {
+		font-size:1.2em;
+		margin:0;
+		padding:0;
+	}
+
+	.timelineEvent .media a:link,.timelineEvent .media a:visited {
+		color:#ab221b;
+	}
+
+	.timelineEvent .media a:hover {
+		color:#7DBADF;
+	}
+div.timelineMajor:nth-of-type(2n){
+	margin-left:50%;
+	text-align:left!important;
+	}
+div.timelineMajor:nth-of-type(2n) h2{
+	margin-left:-10px!important;
+	}
+div.timelineMajor:nth-of-type(2n) h2 span{
+	float:left;
+	}
+div.timelineMajor:nth-of-type(2n) dl{
+	text-align:left!important;	
+	float:right;
+	width:97.5%;
+	
+	}	
+div.timelineMajor:nth-of-type(2n) dt{
+	padding-left:5%!important;	
+	background:url(../images/timeline_decade_circle.gif) left center no-repeat!important;
+	margin-right:-13px!important;
+	text-align:left;
+	
+	}
+div.timelineMajor:nth-of-type(2n) .event_content{
+	color:#333;
+	}
+	

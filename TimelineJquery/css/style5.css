@@ -1,0 +1,252 @@
+/* ============ Design 5 TIMELINE ============= */
+
+div#timelineContainer {
+	margin:20px auto;
+    overflow: hidden;
+	background:url(../images/timeline-line-bg.gif) center repeat-y;
+}
+
+div.timelineToggle {
+	float:right;
+	margin-right:0;
+	white-space:nowrap;
+}
+
+a.expandAll {
+	color:#ccc;
+	cursor:pointer;
+	background:#000;
+	
+	-webkit-border-radius:15px;
+	-moz-border-radius:15px;
+	border-radius:15px;
+	border:solid 3px #fff;
+	
+	font-size:12px;
+	height:20px!important;
+	width:20px!important;
+	overflow:hidden;
+	text-indent:100px;
+	position:absolute;
+	
+	text-align:center;
+	margin-left:34.6%;
+	margin-top:-1px;
+	
+}
+
+	a.expandAll:hover {
+		color:#7DBADF;
+		cursor:pointer;
+	}
+
+div.timelineMajor {
+	clear:left;
+	float:left;
+	margin:0 0 12px;
+	width:50%;
+	text-align:right;
+}
+	.timelineMajor h2 {
+		cursor: pointer;
+		font-size:2em;
+		font-weight:400;
+		margin:0 0 10px;		
+		margin-right:-37px!important;
+		border:solid 5px #fff;		
+	}
+
+	.timelineMajor h2 span {
+		background:#1cbee5;
+		-webkit-border-radius:4px;
+		-moz-border-radius:4px;
+		border-radius:4px;
+		color:#eee;
+		letter-spacing:.1em;
+		line-height:1.7em;
+		padding:5px 10px;
+	}
+
+dl.timelineMinor {
+	clear:left;
+	float:left;
+	margin:0!important;
+	padding:4px 4px 4px 0;
+	position:relative;
+	text-align:right;	
+	width:94%;
+	
+	
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;			
+	
+	
+	background:#e5f5fb;
+	
+	margin:10px 0!important;
+	margin-right:10px!important;	
+}
+
+dl.timelineMinor:after{
+	content: '';
+	top: 14px;
+	right: -15px;
+	position: absolute;
+	border: solid 8px #e5f5fb;
+	border-bottom: solid 8px transparent; 
+	border-top: solid 8px transparent;
+	border-right: solid 8px transparent;
+	}
+
+	.timelineMinor dt {
+		clear:left;
+		font-size:1em;
+		list-style-type:none;
+		line-height:1em;
+		margin:0 0 12px;
+		padding:0 5% 0 0!important;
+		white-space:nowrap;
+	}
+
+		.timelineMinor dt a {
+			color:#2b2f32;
+			cursor:pointer;
+		}
+
+		.timelineMinor dt a.closed {
+			color:#2b2f32;
+			font-size:1em;
+			margin-left:0;
+		}
+
+		.timelineMinor dt a.open {
+			color:#2b2f32 !important;
+		}
+
+		.timelineMinor dt a:hover {
+			color:#2b2f32 !important;
+                        text-decoration: none !important;
+		}
+
+	.timelineMinor dd {
+		padding-right:24px;
+		width:96%;
+	}
+
+		.timelineMinor dd h3 {
+			color:#FFF;
+			clear:both;
+			float:left;
+			font-size:1.5em;
+			margin:0;
+			white-space:nowrap;
+		}
+
+.timelineEvent div.event_content {
+	clear:both;
+	overflow: hidden;
+	line-height:1.2em;
+	margin:0 0 10px 25px;
+        font-size: 0.8em;
+        
+        
+	/* width:500px; */
+}
+
+.timelineEvent h4 {
+	clear:left;
+	float:left;
+	font-size:1.4em;
+	font-weight:400;
+	margin:10px 0 0;
+	padding:0 0 0 20px;
+}
+
+.timelineEvent blockquote {
+	border-left:2px solid #ccc;
+	clear:left;
+	float:left;
+	font-size:1.8em;
+	margin-left:0;
+	padding:0 30px;
+}
+
+.timelineEvent blockquote .attribution{
+	font-size:0.7em;
+	text-align: right;
+}
+
+
+.timelineEvent div.media {
+	float:right;
+	padding:0 0 12px;
+}
+
+	.timelineEvent .media img {
+		border:2px solid #000;
+		margin:0;
+	}
+
+	.timelineEvent .media p {
+		font-size:1.2em;
+		margin:0;
+		padding:0;
+	}
+
+	.timelineEvent .media a:link,.timelineEvent .media a:visited {
+		color:#ab221b;
+	}
+
+	.timelineEvent .media a:hover {
+		color:#7DBADF;
+	}
+	
+div.timelineMajor:nth-of-type(2n){
+	margin-left:50%;
+	text-align:left!important;
+	}
+div.timelineMajor:nth-of-type(2n) h2{
+	margin-left:-38px!important;		
+	}
+div.timelineMajor:nth-of-type(2n) dl.timelineMinor{
+	text-align:left!important;
+	background:#e5f5fb;
+	
+	border-right:none!important;	
+	margin-right:-20px;
+	float:right;
+	width:94%;
+	margin:10px 0!important;
+	
+	}	
+div.timelineMajor:nth-of-type(2n) dl.timelineMinor:before{	
+	content: ''!important;
+	top: 14px!important;
+	left: -15px!important;
+	position: absolute!important;
+	border: solid 8px #e5f5fb!important;
+	border-bottom: solid 8px transparent!important; 
+	border-top: solid 8px transparent!important;
+	border-left: solid 8px transparent!important;
+}
+	
+div.timelineMajor:nth-of-type(2n) dt{
+	background:none;
+	padding-left:5%!important;	
+	}
+div.timelineMajor:nth-of-type(2n) .event_content{
+	color:#333;
+	}
+	
+/* Responsive Start */	
+
+@media only screen and (max-width : 320px) {
+
+	a.expandAll {
+		margin-left:37%;
+	}
+	.timelineEvent div.event_content{
+		margin-left:5px!important;
+		}
+}
