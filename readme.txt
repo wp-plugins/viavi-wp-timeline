@@ -3,7 +3,7 @@ Contributors: viaviwebtech
 Donate link: 
 Tags:  event, responsive, timeline, timeliner, wordpress, wordpress timeline, wordpress timeliner, wp timeline
 Requires at least: 3.3
-Tested up to: 3.9.2
+Tested up to: 3.9.1
 Stable tag: 1.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html

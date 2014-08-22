@@ -6,14 +6,14 @@ $group_name=mysql_fetch_array(mysql_query('SELECT group_id,title FROM '.WordPres
 ?>
 <div class="viavi-content">
 
-<h2><?php echo _e('Edit Timeline','viavi-wordpress-timeline'); ?></h2>
+<h2><?php echo _e('Edit Timeline','viavi-wp-timeline'); ?></h2>
 <div style="display: block;">
-    <form id="form_gonder" action="<?php echo admin_url().'admin.php?page=viavi-wordpress-timeline/index.php'; ?>&isvav=EditGroupPost" method="post">
-        <h3 style="margin-bottom: 1px;"><?php echo _e('Timeline Name','viavi-wordpress-timeline'); ?></h3>
+    <form id="form_gonder" action="<?php echo admin_url().'admin.php?page=viavi-wp-timeline/index.php'; ?>&isvav=EditGroupPost" method="post">
+        <h3 style="margin-bottom: 1px;"><?php echo _e('Timeline Name','viavi-wp-timeline'); ?></h3>
         <input type="text" name="group_name" size="40" value="<?php echo $group_name['title']; ?>"/>
         <input type="hidden" name="group_id" value="<?php echo $group_name['group_id']; ?>"/>
         <br/><br/>
-        <input type="submit" value="<?php echo _e('Update Timeline','viavi-wordpress-timeline'); ?>" class="button" id="gonder_button"/>
+        <input type="submit" value="<?php echo _e('Update Timeline','viavi-wp-timeline'); ?>" class="button" id="gonder_button"/>
     </form>
 </div>
 

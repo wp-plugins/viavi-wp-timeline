@@ -45,17 +45,17 @@ if (!empty($_POST)){
     
     if(empty($event_title) || empty($group_id) ){
         ?>
-        <p class="WordPress_hata"><?php echo _e('Do not leave empty fields.','viavi-wordpress-timeline'); ?></p>
+        <p class="WordPress_hata"><?php echo _e('Do not leave empty fields.','viavi-wp-timeline'); ?></p>
         <?php
         
     }elseif($event_date_is == true && $event_bc_is==true){
         ?>
-        <p class="WordPress_hata"><?php echo _e('Both before Christ and Anno Domini value, you entered. Please try again by entering only one.','viavi-wordpress-timeline'); ?></p>
+        <p class="WordPress_hata"><?php echo _e('Both before Christ and Anno Domini value, you entered. Please try again by entering only one.','viavi-wp-timeline'); ?></p>
         <?php
 
     }elseif($event_date_is == false && $event_bc_is==false){
         ?>
-        <p class="WordPress_hata"><?php echo _e('Please enter a value in any of the two. (Before Christ or Anno Domini)','viavi-wordpress-timeline'); ?></p>
+        <p class="WordPress_hata"><?php echo _e('Please enter a value in any of the two. (Before Christ or Anno Domini)','viavi-wp-timeline'); ?></p>
         <?php
     }else{
         
@@ -82,11 +82,11 @@ if (!empty($_POST)){
 
         if ($sql){
             ?>
-            <p class="WordPress_ok"><?php echo _e('Event was successfully added.','viavi-wordpress-timeline'); ?></p>
+            <p class="WordPress_ok"><?php echo _e('Event was successfully added.','viavi-wp-timeline'); ?></p>
             <?php
         }else{
             ?>
-            <p class="WordPress_hata"><?php echo _e('An error occurred while adding this event.','viavi-wordpress-timeline'); ?></p>
+            <p class="WordPress_hata"><?php echo _e('An error occurred while adding this event.','viavi-wp-timeline'); ?></p>
             <?php
         }                   
     }

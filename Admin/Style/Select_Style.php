@@ -2,13 +2,13 @@
 
 <?php if($_GET['settings-updated']=="true"){?> 
 
-<p class="WordPress_ok"><?php echo _e('Timeline style set successfully.','viavi-wordpress-timeline'); ?></p>    
+<p class="WordPress_ok"><?php echo _e('Timeline style set successfully.','viavi-wp-timeline'); ?></p>    
 
 <?php }?>
 
 <div class="viavi-content" <?php if($_GET['settings-updated']=="true"){?> style="display:none;"<?php }?>>
 
-<h2><?php echo _e('Select Style','viavi-wordpress-timeline'); ?></h2>
+<h2><?php echo _e('Select Style','viavi-wp-timeline'); ?></h2>
 
 <div style="display: block;padding: 0 0 10px 0">
     
@@ -17,7 +17,7 @@
         <?php settings_fields( 'WordPress-fields' ); ?>
          
          <select name="WordPress_TL_style">
-            <option value=""><?php echo _e('Default Style','viavi-wordpress-timeline'); ?></option>
+            <option value=""><?php echo _e('Default Style','viavi-wp-timeline'); ?></option>
              
                     <option value="WordPress_style1" <?php if(get_option('WordPress_TL_style')=="WordPress_style1"){?>selected="selected"<?php }?>>Style 1</option>
                     <option value="WordPress_style2" <?php if(get_option('WordPress_TL_style')=="WordPress_style2"){?>selected="selected"<?php }?>>Style 2</option>

@@ -1,7 +1,7 @@
 <?php if(!defined('WordPress_WP_TIMELINE_KONTROL')){ echo 'Bu dosyaya erşiminiz engellendi.'; exit(); } ?>
 <div class="viavi-content">
 
-<h2><?php echo _e('Timeline List','viavi-wordpress-timeline'); ?></h2>
+<h2><?php echo _e('Timeline List','viavi-wp-timeline'); ?></h2>
 
 <?php
 
@@ -28,10 +28,10 @@ if($toplam_sayfa > 0){
        
     <table width="100%" class="WordPresswptablestd">
         <tr>
-            <th><?php echo _e('Timeline ID','viavi-wordpress-timeline'); ?></th>
-            <th><?php echo _e('Timeline Name','viavi-wordpress-timeline'); ?></th>
-            <th><?php echo _e('Edit','viavi-wordpress-timeline'); ?></th>
-            <th><?php echo _e('Delete','viavi-wordpress-timeline'); ?></th>
+            <th><?php echo _e('Timeline ID','viavi-wp-timeline'); ?></th>
+            <th><?php echo _e('Timeline Name','viavi-wp-timeline'); ?></th>
+            <th><?php echo _e('Edit','viavi-wp-timeline'); ?></th>
+            <th><?php echo _e('Delete','viavi-wp-timeline'); ?></th>
         </tr>
         <?php
         while ($group_name=mysql_fetch_assoc($group_list)){
@@ -40,10 +40,10 @@ if($toplam_sayfa > 0){
             <td><?php echo $group_name['group_id']; ?></td>
             <td><?php echo $group_name['title']; ?></td>
             <td>
-                <a href="<?php echo admin_url().'admin.php?page=viavi-wordpress-timeline/index.php'; ?>&isvav=EditGroupForm&group_id=<?php echo $group_name['group_id']; ?>"><img style="width: 20px" src="<?php echo plugins_url('/viavi-wordpress-timeline/images/edit.png',1); ?>" /></a>
+                <a href="<?php echo admin_url().'admin.php?page=viavi-wp-timeline/index.php'; ?>&isvav=EditGroupForm&group_id=<?php echo $group_name['group_id']; ?>"><img style="width: 20px" src="<?php echo plugins_url('/viavi-wp-timeline/images/edit.png',1); ?>" /></a>
             </td>
             <td>
-                <a onclick="return confirm('<?php echo _e('Events belonging to the timeline will also be deleted. Are you sure you want to delete this timeline?','viavi-wordpress-timeline'); ?>')" href="<?php echo admin_url().'admin.php?page=viavi-wordpress-timeline/index.php'; ?>&isvav=DeleteGroupPost&group_id=<?php echo $group_name['group_id']; ?>"><img style="width: 20px" src="<?php echo plugins_url('/viavi-wordpress-timeline/images/delete.png',1); ?>" /></a>
+                <a onclick="return confirm('<?php echo _e('Events belonging to the timeline will also be deleted. Are you sure you want to delete this timeline?','viavi-wp-timeline'); ?>')" href="<?php echo admin_url().'admin.php?page=viavi-wp-timeline/index.php'; ?>&isvav=DeleteGroupPost&group_id=<?php echo $group_name['group_id']; ?>"><img style="width: 20px" src="<?php echo plugins_url('/viavi-wp-timeline/images/delete.png',1); ?>" /></a>
             </td>            
 
         </tr>
@@ -56,12 +56,12 @@ if($toplam_sayfa > 0){
     <?php            
 
         
-        WordPressTimelineSayfala(admin_url().'admin.php?page=viavi-wordpress-timeline/index.php',$toplam_sayfa,$page,$page_limit,'&isvav=GroupList');
+        WordPressTimelineSayfala(admin_url().'admin.php?page=viavi-wp-timeline/index.php',$toplam_sayfa,$page,$page_limit,'&isvav=GroupList');
 
 }else{
     // Söz yok ise uyarı mesajı ver.
     ?>
-    <p class="WordPress_hata"><?php echo _e('You have not added any group :(','viavi-wordpress-timeline'); ?></p>
+    <p class="WordPress_hata"><?php echo _e('You have not added any group :(','viavi-wp-timeline'); ?></p>
     <?php
 }
 ?>

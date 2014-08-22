@@ -6,7 +6,7 @@ if (!empty($_GET)){
 
     if( empty($id) ){
     ?>
-        <p class="WordPress_hata"><?php echo _e('An error has occurred.','viavi-wordpress-timeline'); ?></p>
+        <p class="WordPress_hata"><?php echo _e('An error has occurred.','viavi-wp-timeline'); ?></p>
     <?php
     }else{
 
@@ -14,11 +14,11 @@ if (!empty($_GET)){
 
         if ($sql){
             ?>
-            <p class="WordPress_ok"><?php echo _e('Event deleted successfully.','viavi-wordpress-timeline'); ?></p>
+            <p class="WordPress_ok"><?php echo _e('Event deleted successfully.','viavi-wp-timeline'); ?></p>
             <?php
         }else{
             ?>
-            <p class="WordPress_hata"><?php echo _e('An error occurred while deleting this event.','viavi-wordpress-timeline'); ?></p>
+            <p class="WordPress_hata"><?php echo _e('An error occurred while deleting this event.','viavi-wp-timeline'); ?></p>
             <?php
         }                
     }

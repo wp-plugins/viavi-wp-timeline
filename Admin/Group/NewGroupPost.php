@@ -7,7 +7,7 @@ if (!empty($_POST)){
     if(empty($title)){
 
         ?>
-        <p class="WordPress_hata"><?php echo _e('Do not leave empty fields.','viavi-wordpress-timeline'); ?></p>
+        <p class="WordPress_hata"><?php echo _e('Do not leave empty fields.','viavi-wp-timeline'); ?></p>
         <?php
 
     }else{
@@ -19,11 +19,11 @@ if (!empty($_POST)){
 
         if ($sql){
             ?>
-            <p class="WordPress_ok"><?php echo _e('The Timeline has successfully added.','viavi-wordpress-timeline'); ?></p>
+            <p class="WordPress_ok"><?php echo _e('The Timeline has successfully added.','viavi-wp-timeline'); ?></p>
             <?php
         }else{
             ?>
-            <p class="WordPress_hata"><?php echo _e('An error occurred while adding timeline.','viavi-wordpress-timeline'); ?></p>
+            <p class="WordPress_hata"><?php echo _e('An error occurred while adding timeline.','viavi-wp-timeline'); ?></p>
             <?php
         }      
     }

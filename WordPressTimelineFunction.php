@@ -50,24 +50,24 @@ function WordPress_Timeline_Admin_Head()
 {
     /* Wp Admin Head */
     
-    load_plugin_textdomain('viavi-wordpress-timeline', FALSE, dirname(plugin_basename(__FILE__)).'/languages/');
+    load_plugin_textdomain('viavi-wp-timeline', FALSE, dirname(plugin_basename(__FILE__)).'/languages/');
      
     wp_enqueue_script('jquery');
     
-    wp_register_script('WordPressTimelineAdminJs', plugins_url().'/viavi-wordpress-timeline/Admin/WordPressTimelineAdmin.js', array( 'jquery' ));
+    wp_register_script('WordPressTimelineAdminJs', plugins_url().'/viavi-wp-timeline/Admin/WordPressTimelineAdmin.js', array( 'jquery' ));
     wp_enqueue_script('WordPressTimelineAdminJs');
     
     /* Start Add Js Variables */
-    $JsData = array('pluginUrl' => plugins_url().'/viavi-wordpress-timeline/' );
+    $JsData = array('pluginUrl' => plugins_url().'/viavi-wp-timeline/' );
     wp_localize_script('WordPressTimelineAdminJs', 'WordPressTimelineJsData', $JsData);
     /* End Add Js Variables */
     
-    wp_register_style( 'WordPressTimelineAdminCss', plugins_url().'/viavi-wordpress-timeline/Admin/WordPressTimelineAdmin.css',array(),'','screen' );
+    wp_register_style( 'WordPressTimelineAdminCss', plugins_url().'/viavi-wp-timeline/Admin/WordPressTimelineAdmin.css',array(),'','screen' );
     wp_enqueue_style( 'WordPressTimelineAdminCss' );
     
     if (@$_GET['isvav']=='NewEventForm' || @$_GET['isvav']=='EditEventForm'){
         wp_enqueue_script('jquery-ui-datepicker');
-        wp_register_script('WordPressTimelineAdminEventJs', plugins_url().'/viavi-wordpress-timeline/Admin/Js/WordPressTimelineAdminEventJs.js', array( 'jquery' ));
+        wp_register_script('WordPressTimelineAdminEventJs', plugins_url().'/viavi-wp-timeline/Admin/Js/WordPressTimelineAdminEventJs.js', array( 'jquery' ));
         wp_enqueue_script('WordPressTimelineAdminEventJs');   
     }
 }
@@ -77,52 +77,52 @@ function WordPress_Timeline_Admin_Head()
 function WordPress_Timeline_Head()
 {
     /* Wp User Head */
-    load_plugin_textdomain('viavi-wordpress-timeline', FALSE, dirname(plugin_basename(__FILE__)).'/languages/');
+    load_plugin_textdomain('viavi-wp-timeline', FALSE, dirname(plugin_basename(__FILE__)).'/languages/');
     
     /* JS */
     wp_enqueue_script('jquery');
     
-    wp_register_script('timelinerColorboxJs', plugins_url().'/viavi-wordpress-timeline/TimelineJquery/inc/colorbox.js', array( 'timelinerTimelinerJs' ));
+    wp_register_script('timelinerColorboxJs', plugins_url().'/viavi-wp-timeline/TimelineJquery/inc/colorbox.js', array( 'timelinerTimelinerJs' ));
     wp_enqueue_script('timelinerColorboxJs');
     
-    wp_register_script( 'timelinerTimelinerJs', plugins_url().'/viavi-wordpress-timeline/TimelineJquery/js/timeline.min.js', array( 'jquery' ));
-    $translation_array = array( 'ExpandAll' => __('+ Expand All','viavi-wordpress-timeline'), 'CollapseAll' => __('- Collapse All','viavi-wordpress-timeline') );
+    wp_register_script( 'timelinerTimelinerJs', plugins_url().'/viavi-wp-timeline/TimelineJquery/js/timeline.min.js', array( 'jquery' ));
+    $translation_array = array( 'ExpandAll' => __('+ Expand All','viavi-wp-timeline'), 'CollapseAll' => __('- Collapse All','viavi-wp-timeline') );
     wp_localize_script( 'timelinerTimelinerJs', 'timelinerTimelinerJsObject', $translation_array );
     wp_enqueue_script('timelinerTimelinerJs');
     
     
     
     /* CSS */
-    wp_register_style( 'timelinerColorboxCss', plugins_url().'/viavi-wordpress-timeline/TimelineJquery/inc/colorbox.css',array(),'','screen' );
+    wp_register_style( 'timelinerColorboxCss', plugins_url().'/viavi-wp-timeline/TimelineJquery/inc/colorbox.css',array(),'','screen' );
     wp_enqueue_style( 'timelinerColorboxCss' );
     
    	if(get_option('WordPress_TL_style')=="WordPress_style1")
 		{
-	  wp_register_style( 'timelinerScreenCss', plugins_url().'/viavi-wordpress-timeline/TimelineJquery/css/style1.css',array(),'','screen' );
+	  wp_register_style( 'timelinerScreenCss', plugins_url().'/viavi-wp-timeline/TimelineJquery/css/style1.css',array(),'','screen' );
 		}
 		else if(get_option('WordPress_TL_style')=="WordPress_style2")
 		{
-	  wp_register_style( 'timelinerScreenCss', plugins_url().'/viavi-wordpress-timeline/TimelineJquery/css/style2.css',array(),'','screen' );
+	  wp_register_style( 'timelinerScreenCss', plugins_url().'/viavi-wp-timeline/TimelineJquery/css/style2.css',array(),'','screen' );
 		}
 		else if(get_option('WordPress_TL_style')=="WordPress_style3")
 		{
-	  wp_register_style( 'timelinerScreenCss', plugins_url().'/viavi-wordpress-timeline/TimelineJquery/css/style3.css',array(),'','screen' );
+	  wp_register_style( 'timelinerScreenCss', plugins_url().'/viavi-wp-timeline/TimelineJquery/css/style3.css',array(),'','screen' );
 		}
 		else if(get_option('WordPress_TL_style')=="WordPress_style4")
 		{
-	  wp_register_style( 'timelinerScreenCss', plugins_url().'/viavi-wordpress-timeline/TimelineJquery/css/style4.css',array(),'','screen' );
+	  wp_register_style( 'timelinerScreenCss', plugins_url().'/viavi-wp-timeline/TimelineJquery/css/style4.css',array(),'','screen' );
 		}
 		else if(get_option('WordPress_TL_style')=="WordPress_style5")
 		{
-	  wp_register_style( 'timelinerScreenCss', plugins_url().'/viavi-wordpress-timeline/TimelineJquery/css/style5.css',array(),'','screen' );
+	  wp_register_style( 'timelinerScreenCss', plugins_url().'/viavi-wp-timeline/TimelineJquery/css/style5.css',array(),'','screen' );
 		}
 		else
 		{
-			wp_register_style( 'timelinerScreenCss', plugins_url().'/viavi-wordpress-timeline/TimelineJquery/css/screen.css',array(),'','screen' );
+			wp_register_style( 'timelinerScreenCss', plugins_url().'/viavi-wp-timeline/TimelineJquery/css/screen.css',array(),'','screen' );
 		}
 	  wp_enqueue_style( 'timelinerScreenCss' );
     
-    wp_register_style( 'timelinerResponsiveCss', plugins_url().'/viavi-wordpress-timeline/TimelineJquery/css/responsive.css',array(),'','screen' );
+    wp_register_style( 'timelinerResponsiveCss', plugins_url().'/viavi-wp-timeline/TimelineJquery/css/responsive.css',array(),'','screen' );
     wp_enqueue_style( 'timelinerResponsiveCss' );
     
 }
@@ -132,9 +132,9 @@ function WordPress_Timeline_Head()
 function WordPress_Timeline_Admin()
 {
     /* Admin Menü */
-    add_menu_page( 'Viavi WordPress Timeline', 'Viavi Timeline', '5', 'viavi-wordpress-timeline/index.php', 'WordPress_Timeline_Index', plugins_url('viavi-wordpress-timeline/images/viavi-wordpress-timeline-icon.png'), 8 );
+    add_menu_page( 'Viavi WordPress Timeline', 'Viavi Timeline', '5', 'viavi-wp-timeline/index.php', 'WordPress_Timeline_Index', plugins_url('viavi-wp-timeline/images/viavi-wp-timeline-icon.png'), 8 );
 		 
-    //load_plugin_textdomain('viavi-wordpress-timeline', FALSE, dirname(plugin_basename(__FILE__)).'/languages/');
+    //load_plugin_textdomain('viavi-wp-timeline', FALSE, dirname(plugin_basename(__FILE__)).'/languages/');
 }
  
 add_action('admin_init', 'WordPress_register_fields' );
@@ -205,14 +205,14 @@ function WordPressTimelineShortCodeOutput( $atts ) {
      * 
      */
     
-    //echo _e('Hepsini_Ac','viavi-wordpress-timeline');
+    //echo _e('Hepsini_Ac','viavi-wp-timeline');
     
     
     $group_id=$atts['timelineid'];
 
     $WordPressTimelineEndSqlYear='';
     $WordPressTimelineOut='<div id="timelineContainer" unselectable="on">';
-   // $WordPressTimelineOut.='<a class="expandAll">'.__('+ Expand All','viavi-wordpress-timeline').'</a><br/>';
+   // $WordPressTimelineOut.='<a class="expandAll">'.__('+ Expand All','viavi-wp-timeline').'</a><br/>';
 
     $WordPressSay=true;
        
@@ -269,7 +269,7 @@ function WordPressTimelineShortCodeOutput( $atts ) {
 						
 						$WordPressTimelineOut.='   <h2 class="timelineMajorMarker"><span>';
             
-            if($WordPressYear < 0){ $WordPressTimelineOut.=__('BC','viavi-wordpress-timeline').' '.ltrim($WordPressYear,'-'); }else{ $WordPressTimelineOut.=(int)$WordPressYear; }
+            if($WordPressYear < 0){ $WordPressTimelineOut.=__('BC','viavi-wp-timeline').' '.ltrim($WordPressYear,'-'); }else{ $WordPressTimelineOut.=(int)$WordPressYear; }
             
             $WordPressTimelineOut.='</span></h2>
             
@@ -301,7 +301,7 @@ function WordPressTimelineShortCodeOutput( $atts ) {
 }
 
 
-$pageslang=__('Pages','viavi-wordpress-timeline');
+$pageslang=__('Pages','viavi-wp-timeline');
 
 function WordPressTimelineSayfala($site_url,$top_sayfa,$page,$limit,$page_url)
 {
@@ -311,7 +311,7 @@ function WordPressTimelineSayfala($site_url,$top_sayfa,$page,$limit,$page_url)
 
         
         
-        echo '<div id="sayfala"><span class="say_sabit">'.__('Pages','viavi-wordpress-timeline').'</span>';
+        echo '<div id="sayfala"><span class="say_sabit">'.__('Pages','viavi-wp-timeline').'</span>';
 
         $x=5; // Active from page next / previous page impressions number of
         $lastP=ceil($top_sayfa / $limit);
@@ -402,17 +402,17 @@ class WordPressTimelineAddEditorButton{
         // this plugin file will work the magic of our button
         
         if (WPLANG == 'tr_TR'){
-            $plugins['mygallery']=plugins_url().'/viavi-wordpress-timeline/Admin/EditorButton/EditorButton-tr_TR.js';
+            $plugins['mygallery']=plugins_url().'/viavi-wp-timeline/Admin/EditorButton/EditorButton-tr_TR.js';
         }else{
-            $plugins['mygallery']=plugins_url().'/viavi-wordpress-timeline/Admin/EditorButton/EditorButton-en_US.js';
+            $plugins['mygallery']=plugins_url().'/viavi-wp-timeline/Admin/EditorButton/EditorButton-en_US.js';
         }
         return $plugins;
     }
 
     // Declare script for new button
     public function my_add_tinymce_plugin( $plugin_array ) {
-            $plugin_array['my_mce_button'] = plugins_url().'/viavi-wordpress-timeline/Admin/EditorButton/EditorButtonTinyMce4.0.js';
-            //$plugin_array['my_mce_button'] = plugins_url().'/viavi-wordpress-timeline/Admin/EditorButton/EditorButton-tr_TR.js';
+            $plugin_array['my_mce_button'] = plugins_url().'/viavi-wp-timeline/Admin/EditorButton/EditorButtonTinyMce4.0.js';
+            //$plugin_array['my_mce_button'] = plugins_url().'/viavi-wp-timeline/Admin/EditorButton/EditorButton-tr_TR.js';
             return $plugin_array;
     }
 

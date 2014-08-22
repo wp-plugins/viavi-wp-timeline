@@ -1,6 +1,6 @@
 <?php if(!defined('WordPress_WP_TIMELINE_KONTROL')){ echo 'Bu dosyaya erşiminiz engellendi.'; exit(); } ?>
 <div class="viavi-content">
-<h2><?php echo _e('Timeline Event List','viavi-wordpress-timeline'); ?></h2>
+<h2><?php echo _e('Timeline Event List','viavi-wp-timeline'); ?></h2>
 <?php
 
 /* Sayfalama İçin */
@@ -31,12 +31,12 @@ if($toplam_sayfa > 0){
     ?>
     <table class="WordPresswptablestd" width="100%">
         <tr>
-            <th><?php echo _e('Event ID','viavi-wordpress-timeline'); ?></th>
-            <th><?php echo _e('Timeline Name','viavi-wordpress-timeline'); ?></th>
-            <th><?php echo _e('Event Title','viavi-wordpress-timeline'); ?></th>
-            <th><?php echo _e('Event Time','viavi-wordpress-timeline'); ?></th>
-            <th><?php echo _e('Edit','viavi-wordpress-timeline'); ?></th>
-            <th><?php echo _e('Delete','viavi-wordpress-timeline'); ?></th>
+            <th><?php echo _e('Event ID','viavi-wp-timeline'); ?></th>
+            <th><?php echo _e('Timeline Name','viavi-wp-timeline'); ?></th>
+            <th><?php echo _e('Event Title','viavi-wp-timeline'); ?></th>
+            <th><?php echo _e('Event Time','viavi-wp-timeline'); ?></th>
+            <th><?php echo _e('Edit','viavi-wp-timeline'); ?></th>
+            <th><?php echo _e('Delete','viavi-wp-timeline'); ?></th>
         </tr>
         <?php
         while ($event=mysql_fetch_assoc($event_list)){
@@ -55,10 +55,10 @@ if($toplam_sayfa > 0){
                 ?>
             </td>
             <td>
-                <a href="<?php echo admin_url().'admin.php?page=viavi-wordpress-timeline/index.php'; ?>&isvav=EditEventForm&event_id=<?php echo $event['event_id']; ?>"><img style="width: 20px" src="<?php echo plugins_url('/viavi-wordpress-timeline/images/edit.png',1); ?>" /></a>
+                <a href="<?php echo admin_url().'admin.php?page=viavi-wp-timeline/index.php'; ?>&isvav=EditEventForm&event_id=<?php echo $event['event_id']; ?>"><img style="width: 20px" src="<?php echo plugins_url('/viavi-wp-timeline/images/edit.png',1); ?>" /></a>
             </td>
             <td>
-                <a onclick="return confirm('<?php echo _e('Are you sure you want to delete this event?','viavi-wordpress-timeline'); ?>')" href="<?php echo admin_url().'admin.php?page=viavi-wordpress-timeline/index.php'; ?>&isvav=DeleteEventPost&event_id=<?php echo $event['event_id']; ?>"><img style="width: 20px" src="<?php echo plugins_url('/viavi-wordpress-timeline/images/delete.png',1); ?>" /></a>
+                <a onclick="return confirm('<?php echo _e('Are you sure you want to delete this event?','viavi-wp-timeline'); ?>')" href="<?php echo admin_url().'admin.php?page=viavi-wp-timeline/index.php'; ?>&isvav=DeleteEventPost&event_id=<?php echo $event['event_id']; ?>"><img style="width: 20px" src="<?php echo plugins_url('/viavi-wp-timeline/images/delete.png',1); ?>" /></a>
             </td>            
 
         </tr>
@@ -71,12 +71,12 @@ if($toplam_sayfa > 0){
     <?php            
 
         
-        WordPressTimelineSayfala(admin_url().'admin.php?page=viavi-wordpress-timeline/index.php',$toplam_sayfa,$page,$page_limit,'&isvav=EventList');
+        WordPressTimelineSayfala(admin_url().'admin.php?page=viavi-wp-timeline/index.php',$toplam_sayfa,$page,$page_limit,'&isvav=EventList');
 
 }else{
     // Söz yok ise uyarı mesajı ver.
     ?>
-    <p class="WordPress_hata"><?php echo _e('You have not added any event :(','viavi-wordpress-timeline'); ?></p>
+    <p class="WordPress_hata"><?php echo _e('You have not added any event :(','viavi-wp-timeline'); ?></p>
     <?php
 }
 ?>
