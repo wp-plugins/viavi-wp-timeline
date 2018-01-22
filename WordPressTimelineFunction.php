@@ -11,9 +11,13 @@ function WordPress_Timeline_Kurulum()
      // Tables...
     $table_list_array=array();
     
-    $table_list=mysql_query("SHOW TABLES FROM ".DB_NAME);
-    while($row=mysql_fetch_row($table_list)){
-        $table_list_array[]=$row[0];
+    $sql = "SHOW TABLES LIKE '%'";
+    $results = $wpdb->get_results($sql);
+    
+    foreach($results as $index => $value) {
+        foreach($value as $tableName) {
+            $table_list_array[] = $tableName;
+        }
     }
 
     
@@ -199,6 +203,8 @@ function WordPressTimelineGetYear($mysqlDateTime){
 
 
 function WordPressTimelineShortCodeOutput( $atts ) {
+
+    global $wpdb;
     
     /*
      * If you are in the same year, if you have a few events of the year, add into the ...
@@ -216,34 +222,33 @@ function WordPressTimelineShortCodeOutput( $atts ) {
 
     $WordPressSay=true;
        
-	   $nt=1;
-	        
-    $sql_group=mysql_query('SELECT * FROM '.WordPress_WP_TIMELINE_DB_PREFIX.'WordPress_Timeline WHERE group_id="'.$group_id.'" AND type="event" ORDER BY timeline_bc ASC, timeline_date ASC ');
-    while($row_group=mysql_fetch_array($sql_group)){
+	$sql_group= $wpdb->get_results('SELECT * FROM wp_WordPress_Timeline WHERE group_id="'.$group_id.'" AND type="event" ORDER BY timeline_bc ASC, timeline_date ASC ');
+    
+    
+    
+    foreach($sql_group as $key => $post){
 
-        if ($row_group['timeline_bc'] < 0 ){
-            $WordPressYear=$row_group['timeline_bc'];
-        }elseif( WordPressTimelineGetYear($row_group['timeline_date'] ) > 0 ){
+        if ($post->timeline_bc < 0 ){
+            $WordPressYear=$post->timeline_bc;
+        }elseif( WordPressTimelineGetYear($post->timeline_date ) > 0 ){
             // Only Year
-            $WordPressYear=WordPressTimelineGetYear($row_group['timeline_date']);
+            $WordPressYear=WordPressTimelineGetYear($post->timeline_date);
         }
-        
-        
         
         if ($WordPressYear==$WordPressTimelineEndSqlYear){
             
             // Add into the year
             $WordPressTimelineOut.='
                 <dl class="timelineMinor">
-                    <dt id="event'.$row_group['event_id'].'"><a>'.$row_group['title'].'</a></dt>
-                    <dd class="timelineEvent" id="event'.$row_group['event_id'].'EX" style="display: none; ">
+                    <dt id="event'.$post->event_id.'"><a>'.$post->title.'</a></dt>
+                    <dd class="timelineEvent" id="event'.$post->event_id.'EX" style="display: none; ">
                         <div class="event_content">';
                             
                             // Date details
                             if($WordPressYear > 0){
-                                $WordPressTimelineOut.='<span class="WordPressDate">'.WordPressTimelineDateTitle($row_group['timeline_date']).'</span>';
+                                $WordPressTimelineOut.='<span class="WordPressDate">'.WordPressTimelineDateTitle($post->timeline_date).'</span>';
                             }
-                            $WordPressTimelineOut.='<div class="timeline-content">'.$row_group['event_content'].'</div></div><!-- event_content -->
+                            $WordPressTimelineOut.='<div class="timeline-content">'.$post->event_content.'</div></div><!-- event_content -->
                     </dd><!-- /.timelineEvent -->
                 </dl><!-- /.timelineMinor -->';
         }else{
@@ -255,16 +260,16 @@ function WordPressTimelineShortCodeOutput( $atts ) {
             
             // Add a new year, the major ...
             
-						if($nt%2==0)
+						if($key%2==0)
 						{
 							$WordPressTimelineOut.='
-							<div class="timelineMajor right" id="'.$nt.'">';
+							<div class="timelineMajor right" id="'.$key.'">';
             
 						}
 						else
 						{
 							$WordPressTimelineOut.='
-            	<div class="timelineMajor left" id="'.$nt.'">';
+            	<div class="timelineMajor left" id="'.$key.'">';
 						}
 						
 						$WordPressTimelineOut.='   <h2 class="timelineMajorMarker"><span>';
@@ -274,16 +279,16 @@ function WordPressTimelineShortCodeOutput( $atts ) {
             $WordPressTimelineOut.='</span></h2>
             
                 <dl class="timelineMinor">
-                    <dt id="event'.$row_group['event_id'].'"><a>'.$row_group['title'].'</a></dt>
-                    <dd class="timelineEvent" id="event'.$row_group['event_id'].'EX" style="display: none; ">
+                    <dt id="event'.$post->event_id.'"><a>'.$post->title.'</a></dt>
+                    <dd class="timelineEvent" id="event'.$post->event_id.'EX" style="display: none; ">
                         <div class="event_content">';
             
                             // Date details
                             if($WordPressYear > 0){
-                                $WordPressTimelineOut.='<span class="WordPressDate">'.WordPressTimelineDateTitle($row_group['timeline_date']).'</span>';
+                                $WordPressTimelineOut.='<span class="WordPressDate">'.WordPressTimelineDateTitle($post->timeline_date).'</span>';
                             }
                             
-                        $WordPressTimelineOut.='<div class="timeline-content">'.$row_group['event_content'].'</div></div><!-- event_content -->
+                        $WordPressTimelineOut.='<div class="timeline-content">'.$post->event_content.'</div></div><!-- event_content -->
                     </dd><!-- /.timelineEvent -->
                 </dl><!-- /.timelineMinor -->';
             
@@ -293,8 +298,8 @@ function WordPressTimelineShortCodeOutput( $atts ) {
         
         $WordPressSay=false;
 				 
-        $nt++;
-    } // While
+
+    } // Foreach
     $WordPressTimelineOut.='</div><!-- /.timelineMajor -->';
     $WordPressTimelineOut.='</div><!-- /#timelineContainer -->';
     return $WordPressTimelineOut;
